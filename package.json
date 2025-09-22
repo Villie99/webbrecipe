@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Villie99/webbrecipe/issues"
   },
-  "homepage": "https://github.com/Villie99/webbrecipe#readme"
+  "homepage": "https://github.com/Villie99/webbrecipe#readme",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "express": "^5.1.0"
+  }
 }
