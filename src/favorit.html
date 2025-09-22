@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="styleResult.css" rel="stylesheet">
+        <title>Favoriter</title>
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <h1>Mina Favoriter</h1>
+            </header>
+            <nav>
+                <a href="index.html">Tillbaka</a>
+            </nav>
+            <main>
+                <h2>Sparade Recept</h2>
+                
+                <div id="favorites-grid" class="recipe-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 20px 0; justify-items: center; margin: 0 auto; max-width: 1200px;">
+                    <!-- Favorites will be populated here by JavaScript -->
+                </div>
+
+                <div id="no-favorites" style="text-align: center; padding: 50px; display: none;">
+                    <h3>Inga favoriter sparade än</h3>
+                    <p>Lägg till recept som favoriter för att se dem här!</p>
+                    <a href="index.html" style="color: #007bff; text-decoration: underline;">Sök efter recept</a>
+                </div>
+
+            </main>
+            <footer>
+                Made by Villie Brandt
+            </footer>
+        </div>
+        <script src="transition.js"></script>
+        <script src="favorit.js"></script>
+    </body>
+</html>

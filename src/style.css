@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container {
+    display: grid;
+}
+
+/* 900px and up */
+@media (min-width: 900px) {
+    #container {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "movie-figures"
+            "footer";    
+    }
+}
+/*500px and up to 900px*/
+@media (min-width: 500px) and (max-width: 900px) {
+    #container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header movie-figures"
+            "nav movie-figures"
+            "footer movie-figures";
+    }
+    nav{
+        flex-direction: column;
+        padding: 10px;
+        
+    }
+   
+}
+/* 500px and down */
+@media (max-width: 500px) {
+    #container {
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "movie-figures"
+            "footer";   
+    }
+}
+
+header {
+    display: flex;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.input-row {
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#search-button {
+    padding: 15px 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+.search-recept {
+    margin-top: 20px;
+}
+nav #add-favorite-btn {
+    background-color: #444 !important;
+    border-radius: 4px !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 16px !important;
+    appearance: none !important;
+}
+

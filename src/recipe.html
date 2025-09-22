@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <title>Recipe</title>
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <h1>Recept för Moa</h1>
+            </header>
+            <nav>
+                <a href="results.html">Tillbaka</a>
+                <button id="add-favorite-btn" onclick="addToFavorites()">Lägg till favoriter</button>
+            </nav>
+            <main>
+                <h2>Valt Recept</h2>
+                    <div class = "Recipe-presentation">
+                        <img id="recipe-image" src="{RECIPE_IMAGE_URL}" alt="{RECIPE_NAME}">
+                        <h3 id="recipe-name">{RECIPE_NAME}</h3>
+                        <h4>Ingredienser:</h4>
+                        <ul id="recipe-ingredients">
+                            <li>{RECIPE_INGREDIENTS}</li>
+                        </ul>
+                    </div>
+            </main>
+            <footer>
+                Made by Villie Brandt
+            </footer>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="transition.js"></script>
+        <script src="api.js"></script>
+        <script src="scripts.js"></script>
+        <script src="recipe.js"></script>
+        <script src="addFavorit.js"></script>
+    </body>
+</html>
