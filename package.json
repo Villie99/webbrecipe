@@ -1,0 +1,19 @@
+{
+  "name": "webbrecipe",
+  "version": "1.0.0",
+  "description": "Recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Villie99/webbrecipe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Villie99/webbrecipe/issues"
+  },
+  "homepage": "https://github.com/Villie99/webbrecipe#readme"
+}
