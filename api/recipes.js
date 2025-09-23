@@ -2,24 +2,34 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-// Define your API credentials
 const APP_ID = 'ed5568ce';
 const APP_KEY = '96ad569ed652fcf87bb20475397e73b6';
 
-// The /api/recipes route will be handled here
 router.get('/recipes', async (req, res) => {
     try {
-        const ingredients = req.query.q; // Get the 'q' parameter from the URL
-        const externalApiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredients}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+        const ingredients = req.query.q;
+        if (!ingredients) {
+            return res.status(400).json({ error: 'No ingredients provided' }); 
+        }
 
-        // Make the request to the external API
+        const externalApiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredients}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+        console.log('Calling external API:', externalApiUrl);
+
         const response = await axios.get(externalApiUrl);
         const data = response.data;
 
-        // Send the data back to the frontend
-        res.json(data);
+        const hits = data.hits || [];
+        console.log('API response received, recipes found:', hits.length);
+
+        const simplifiedRecipes = hits.map(hit => ({
+            name: hit.recipe.label,
+            image: hit.recipe.image,
+            ingredientList: hit.recipe.ingredientLines
+        }));
+
+        res.json(simplifiedRecipes);
     } catch (error) {
-        console.error("Error fetching recipes:", error);
+        console.error("Error fetching recipes:", error.message);
         res.status(500).json({ error: 'Failed to fetch recipes.' });
     }
 });
