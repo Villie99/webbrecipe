@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const recipeRouter = require('./api/recipes'); // relative path
 
 const app = express();
 const PORT = process.env.PORT || 3000;

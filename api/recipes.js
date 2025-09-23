@@ -3,8 +3,8 @@ const router = express.Router();
 const axios = require('axios');
 
 // Define your API credentials
-const APP_ID = '96ad569ed652fcf87bb20475397e73b6';
-const APP_KEY = 'ed5568ce';
+const APP_ID = 'ed5568ce';
+const APP_KEY = '96ad569ed652fcf87bb20475397e73b6';
 
 // The /api/recipes route will be handled here
 router.get('/recipes', async (req, res) => {

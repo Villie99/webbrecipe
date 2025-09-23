@@ -31,17 +31,14 @@ function getAllIngredients(){
     return ingredients;
 }
 
-function displayRecipes(recipes){
+function displayRecipes(recipes) {
+    // The 'recipes' variable now holds the simplified array directly from the server.
+    console.log("hej"); // This will now log! 🎉
+    
     if (recipes && recipes.length > 0) {
-        const simplifiedRecipes = recipes.map(recipeItem => ({
-            name: recipeItem.recipe.label,
-            image: recipeItem.recipe.image,
-            ingredientList: recipeItem.recipe.ingredientLines
-        }));
+        console.log('Simplified recipes:', recipes);
         
-        console.log('Simplified recipes:', simplifiedRecipes);
-        
-        localStorage.setItem('recipes', JSON.stringify(simplifiedRecipes));
+        localStorage.setItem('recipes', JSON.stringify(recipes));
         console.log('Simplified recipes stored in localStorage');
         
         slideTransitionTo('results.html');
