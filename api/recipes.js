@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const APP_ID = ' process.env.APP_ID';
-const APP_KEY = 'process.env.APP_KEY';
+const APP_ID = process.env.APP_ID;
+const APP_KEY = process.env.APP_KEY;
 
 router.get('/recipes', async (req, res) => {
     try {
