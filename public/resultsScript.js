@@ -1,4 +1,3 @@
-// Load recipes when page loads
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Results page loaded');
 
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (recipesData && recipesData !== 'undefined' && recipesData !== 'null') {
         try {
             const simplifiedRecipes = JSON.parse(recipesData);
-            console.log('Loaded recipes:', simplifiedRecipes);
             populateResult(simplifiedRecipes);
         } catch (error) {
             console.error('Error parsing recipes data:', error);
@@ -19,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function populateResult(simplifiedRecipes){
-    console.log('Populating results with:', simplifiedRecipes);
-    
+
     const recipeGrid = document.querySelector('.recipe-grid');
     
     if (!recipeGrid) {
@@ -40,7 +37,7 @@ function populateResult(simplifiedRecipes){
                 <div class="recipe-content">
                     <h3>${recipe.name}</h3>
                     <div class="search-button">
-                        <button id="button-recipe-${index}" onclick="openRecipe(${index})">Visa recept</button>
+                        <button id="button-recipe-${index}" onclick="openRecipe(${index})">Show Recipe</button>
                     </div>
                 </div>
             </div>
@@ -48,6 +45,4 @@ function populateResult(simplifiedRecipes){
         
         recipeGrid.innerHTML += recipeCard;
     });
-    
-    console.log(`Populated ${Math.min(simplifiedRecipes.length, 24)} recipe cards`);
 }
