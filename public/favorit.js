@@ -65,14 +65,10 @@ function removeFavorite(favoriteIndex) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     
     if (favorites[favoriteIndex]) {
-        const recipeName = favorites[favoriteIndex].name;
-        
-        if (confirm(`Vill du ta bort "${recipeName}" från favoriter?`)) {
-            favorites.splice(favoriteIndex, 1);
+        favorites.splice(favoriteIndex, 1);
 
-            localStorage.setItem('favorites', JSON.stringify(favorites));
+        localStorage.setItem('favorites', JSON.stringify(favorites));
 
-            loadFavorites();
-        }
+        loadFavorites();
     }
 }
