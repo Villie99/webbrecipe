@@ -5,7 +5,6 @@ $searchButton.on('click', async () => {
     console.log(ingredients.length);
 
     if (ingredients.length === 0) {
-        alert("Du måste skriva in minst en ingridiens");
         return;
     } else {
         try {
@@ -13,7 +12,6 @@ $searchButton.on('click', async () => {
             displayRecipes(recipes);
         } catch (error) {
             console.error("Error:", error);
-            alert("Något gick fel när recepten hämtades");
         }
     }
 });
@@ -32,8 +30,6 @@ function getAllIngredients(){
 }
 
 function displayRecipes(recipes) {
-    // The 'recipes' variable now holds the simplified array directly from the server.
-    console.log("hej"); // This will now log! 🎉
     
     if (recipes && recipes.length > 0) {
         console.log('Simplified recipes:', recipes);
