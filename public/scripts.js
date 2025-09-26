@@ -40,6 +40,5 @@ function displayRecipes(recipes) {
         slideTransitionTo('results.html');
     } else {
         console.error('No recipes to store');
-        alert('No recipes found. Try different ingredients.');
     }
 }

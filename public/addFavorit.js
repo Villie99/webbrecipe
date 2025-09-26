@@ -17,18 +17,12 @@ function addToFavorites() {
             favoriteButton.style.backgroundColor = '#28a745';
             favoriteButton.style.cursor = 'default';
             favoriteButton.disabled = true;
-            
-            alert(`${recipe.name} har lagts till i favoriter!`);
         } else {
             favoriteButton.textContent = '✓ Redan i favoriter';
             favoriteButton.style.backgroundColor = '#6c757d';
             favoriteButton.style.cursor = 'default';
             favoriteButton.disabled = true;
-            
-            alert(`${recipe.name} finns redan i favoriter!`);
         }
     }
-    function checkIfRecipeIsFavorit(){
-        
-    }
+    
 }
